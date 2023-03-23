@@ -6,7 +6,7 @@ import { ITask } from "../types/task";
 import style from "./App.module.scss";
 
 function App() {
-	const [tasks, setTask] = useState<ITask[] | []>([]);
+	const [tasks, setTask] = useState<ITask[]>([]);
 	return (
 		<div className={style.AppStyle}>
 			<Form setTask={setTask} />
