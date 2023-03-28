@@ -7,9 +7,18 @@ import style from "./App.module.scss";
 
 function App() {
 	const [tasks, setTask] = useState<ITask[]>([]);
+	const [selected, setSelected] = useState<ITask>();
+
+	const selectTask = (taskSelected: ITask) => {
+		setSelected(taskSelected);
+	}
+
 	return (
 		<div className={style.AppStyle}>
-			<Form setTask={setTask} />
+			<Form 
+			setTask={setTask} 
+			selectTask={selectTask}
+			/>
 			<List tasks={tasks} />
 			<Cronometro />
 		</div>
